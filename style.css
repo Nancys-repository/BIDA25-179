@@ -217,8 +217,9 @@ button {
 footer {
     margin-top: 60px;
     padding: 15px;
-    background: #222;
+    background: #0B2E33; /* corrected color */
     color: white;
+    text-align: center;
 }
 
 /* RESPONSIVE */
