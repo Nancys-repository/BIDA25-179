@@ -1,1 +1,126 @@
-<link rel="stylesheet" href="style.css">
+/* Custom Variables */
+:root {
+    --ochre: #b6822b;
+    --honey: #e3a638;
+    --white: #ffffff;
+    --cream: #fdfaf5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: var(--cream);
+    color: #333;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: var(--white);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--ochre);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin: 0 15px;
+    letter-spacing: 1px;
+}
+
+.logo h1 {
+    color: var(--ochre);
+    font-size: 28px;
+    letter-spacing: 3px;
+}
+
+.logo span {
+    display: block;
+    text-align: center;
+    font-size: 10px;
+    letter-spacing: 5px;
+    color: #888;
+}
+
+/* Hero Video Section */
+.hero {
+    position: relative;
+    height: 70vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2); /* Darkens video slightly for text readability */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.btn-honey {
+    background: var(--honey);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn-honey:hover {
+    background: var(--ochre);
+}
+
+/* Footer */
+.footer {
+    background: var(--ochre);
+    color: white;
+    padding: 50px 5%;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hides links on small screens */
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
