@@ -4,43 +4,287 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Crave It Desserts</title>
- 
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* GENERAL */
+body {
+ margin: 0;
+ font-family: Arial, sans-serif;
+ background: #ffe6f0;
+}
+
+/* INTRO ANIMATION */
+.intro {
+ position: fixed;
+ width: 100%;
+ height: 100vh;
+ background: #ffb6c1;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ z-index: 1000;
+}
+
+.intro h1 {
+ font-size: 60px;
+ color: #ff69b4;
+ position: absolute;
+ right: -100%;
+ animation: slide 3s forwards;
+}
+
+@keyframes slide {
+ to {
+ right: 0;
+ left: 0;
+ text-align: left;
+ padding-left: 20px;
+ }
+}
+
+/* MAIN CONTENT */
+.content {
+ display: none;
+}
+
+/* NAVBAR */
+nav {
+ display: flex;
+ justify-content: flex-end;
+ padding: 20px;
+ gap: 30px;
+}
+
+nav a {
+ text-decoration: none;
+ color: black;
+ font-weight: bold;
+}
+
+nav a:hover {
+ color: #ff69b4;
+}
+
+/* FEATURED */
+.featured {
+ text-align: center;
+ padding: 40px;
+}
+
+.featured img {
+ width: 300px;
+ border-radius: 20px;
+ cursor: pointer;
+}
+
+/* DOTS */
+.dots {
+ margin-top: 10px;
+}
+
+.dot {
+ height: 10px;
+ width: 10px;
+ background: pink;
+ display: inline-block;
+ border-radius: 50%;
+}
+
+/* EXPLORE */
+.explore {
+ display: flex;
+ justify-content: space-between;
+ padding: 40px;
+}
+
+.order-btn {
+ background: #ff69b4;
+ padding: 10px 20px;
+ border: none;
+ color: white;
+ cursor: pointer;
+}
+
+/* CARDS */
+.cards {
+ display: flex;
+ justify-content: space-around;
+ padding: 30px;
+}
+
+.card {
+ background: white;
+ padding: 20px;
+ border-radius: 15px;
+ width: 20%;
+ text-align: center;
+}
+
+.card button {
+ background: pink;
+ border: none;
+ padding: 10px;
+ cursor: pointer;
+}
+
+/* FORM */
+.form-section {
+ display: none;
+ padding: 40px;
+ text-align: center;
+}
+
+input, textarea {
+ display: block;
+ width: 80%;
+ margin: 10px auto;
+ padding: 10px;
+}
+
+.send-btn {
+ background: #ff69b4;
+ color: white;
+ border: none;
+ padding: 10px;
+}
+
+/* FOOTER */
+footer {
+ background: #ffc0cb;
+ padding: 20px;
+ text-align: center;
+}
+
+.footer-links a {
+ margin: 0 10px;
+ text-decoration: none;
+ color: black;
+}
+
+.footer-img {
+ width: 100px;
+}
+</style>
 </head>
- 
+
 <body>
- 
-<header>
-<div class="logo swing">CRAVE IT DESSERTS</div>
- 
-<nav id="nav">
-<a href="index.html" class="active">Home</a>
-<a href="menu.html">Menu</a>
-<a href="about.html">About</a>
-<a href="gallery.html">Gallery</a>
-<a href="contact.html">Contact</a>
+
+<!-- INTRO -->
+<div class="intro">
+ <h1>CRAVE IT DESSERTS</h1>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="content">
+
+<!-- NAV -->
+<nav>
+ <a href="#">HOME</a>
+ <a href="#">MENU</a>
+ <a href="#">ABOUT</a>
+ <a href="#">GALLERY</a>
+ <a href="#">CONTACT</a>
 </nav>
- 
-<div class="header-buttons">
-<button onclick="toggleDarkMode()">🌙</button>
-<button onclick="toggleMenu()">☰</button>
-</div>
-</header>
- 
-<section class="hero">
-<div class="overlay">
-<h1>Delicious Desserts Made For You</h1>
-<a href="contact.html" class="btn">Order Now</a>
-</div>
+
+<!-- FEATURED -->
+<section class="featured">
+ <h2>FEATURED DESSERTS</h2>
+ <a href="menu.html">
+ <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b" alt="dessert">
+ </a>
+
+ <div class="dots">
+ <span class="dot"></span>
+ <span class="dot"></span>
+ <span class="dot"></span>
+ </div>
 </section>
- 
-<a href="https://wa.me/26778119183" class="whatsapp" target="_blank">
-<i class="fa-brands fa-whatsapp"></i>
-</a>
- 
-<script src="js/script.js"></script>
+
+<!-- EXPLORE -->
+<section class="explore">
+ <h2>EXPLORE</h2>
+ <button class="order-btn" onclick="openForm()">ORDER NOW</button>
+</section>
+
+<!-- CARDS -->
+<div class="cards">
+ <div class="card">
+ <h3>Menu</h3>
+ <p>Check our desserts</p>
+ <button onmouseover="location.href='menu.html'">Read More</button>
+ </div>
+
+ <div class="card">
+ <h3>About</h3>
+ <p>Know our story</p>
+ <button onmouseover="location.href='about.html'">Read More</button>
+ </div>
+
+ <div class="card">
+ <h3>Gallery</h3>
+ <p>View desserts</p>
+ <button onmouseover="location.href='gallery.html'">Read More</button>
+ </div>
+
+ <div class="card">
+ <h3>Contact</h3>
+ <p>Reach us</p>
+ <button onmouseover="location.href='contact.html'">Read More</button>
+ </div>
+</div>
+
+<!-- FORM -->
+<div class="form-section" id="form">
+ <h2>Order Form</h2>
+ <input type="text" id="name" placeholder="Your Name">
+ <input type="text" id="phone" placeholder="Phone Number">
+ <textarea id="order" placeholder="Your Order"></textarea>
+
+ <button class="send-btn" onclick="sendWhatsApp()">SEND</button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+ <img class="footer-img" src="https://images.unsplash.com/photo-1589307004394-07f9b2b24c7c" alt="oreo">
+
+ <div class="footer-links">
+ <a href="#">Home</a>
+ <a href="#">Menu</a>
+ <a href="#">About</a>
+ <a href="#">Gallery</a>
+ <a href="#">Contact</a>
+ </div>
+
+ <p>© 2026 CRAVE IT DESSERTS. All rights reserved.</p>
+</footer>
+
+</div>
+
+<!-- SCRIPT -->
+<script>
+// SHOW CONTENT AFTER ANIMATION
+setTimeout(() => {
+ document.querySelector(".intro").style.display = "none";
+ document.querySelector(".content").style.display = "block";
+}, 3000);
+
+// OPEN FORM
+function openForm() {
+ document.getElementById("form").style.display = "block";
+}
+
+// SEND TO WHATSAPP
+function sendWhatsApp() {
+ let name = document.getElementById("name").value;
+ let phone = document.getElementById("phone").value;
+ let order = document.getElementById("order").value;
+
+ let message = `Name: ${name}%0APhone: ${phone}%0AOrder: ${order}`;
+ let url = "https://wa.me/26778119183?text=" + message;
+
+ window.open(url, "_blank");
+}
+</script>
+
 </body>
 </html>
- 
- 
