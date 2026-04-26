@@ -1,26 +1,13 @@
-// SHOW CONTENT AFTER ANIMATION
-setTimeout(() => {
- const intro = document.querySelector(".intro");
- const content = document.querySelector(".content");
+// This script runs as soon as the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("Crave It Desserts Website is Ready!");
 
- if (intro) intro.style.display = "none";
- if (content) content.style.display = "block";
-}, 3000);
-
-// OPEN FORM
-function openForm() {
- const form = document.getElementById("form");
- if (form) form.style.display = "block";
-}
-
-// SEND TO WHATSAPP
-function sendWhatsApp() {
- let name = document.getElementById("name").value;
- let phone = document.getElementById("phone").value;
- let order = document.getElementById("order").value;
-
- let message = `Name: ${name}%0APhone: ${phone}%0AOrder: ${order}`;
- let url = "https://wa.me/26778119183?text=" + message;
-
- window.open(url, "_blank");
-}
+    // Simple interaction: When the user clicks the "View Our Menu" button
+    const menuBtn = document.querySelector('.btn-honey');
+    
+    if(menuBtn) {
+        menuBtn.addEventListener('click', () => {
+            alert("Our Honey & Cinnamon Menu is coming soon!");
+        });
+    }
+});
