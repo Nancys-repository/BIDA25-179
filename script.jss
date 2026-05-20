@@ -1,57 +1,77 @@
-<!DOCTYPE html>
-<body>
+// Mobile Navigation Toggle
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
  
-<header>
-  <nav class="navbar">
-    <div class="logo">CRAVE IT DESSERTS</div>
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
  
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+// Scroll Animation
+const cards = document.querySelectorAll(
+    ".feature-card, .menu-card, .gallery-grid img, .about-image, .contact-box"
+);
  
-    <div class="menu-toggle" id="menu-toggle">
-      ☰
-    </div>
-  </nav>
-</header>
+window.addEventListener("scroll", () => {
+    const triggerBottom = window.innerHeight * 0.85;
  
-<section class="hero">
-  <div class="hero-content fade-in">
-    <h1>Delicious Desserts Made With Love</h1>
-    <p>Luxury desserts, creamy ice creams and unforgettable sweet experiences.</p>
-    <a href="menu.html" class="btn">Explore Menu</a>
-  </div>
-</section>
+    cards.forEach(card => {
+        const cardTop = card.getBoundingClientRect().top;
  
-<section class="features">
-  <div class="feature-card slide-up">
-    <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=1000&auto=format&fit=crop" alt="Dessert">
-    <h3>Premium Desserts</h3>
-    <p>Freshly prepared desserts made with quality ingredients.</p>
-  </div>
+        if(cardTop < triggerBottom){
+            card.classList.add("show");
+        }
+    });
+});
  
-  <div class="feature-card slide-up">
-    <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1000&auto=format&fit=crop" alt="Milkshake">
-    <h3>Sweet Drinks</h3>
-    <p>Milkshakes and sweet beverages with rich creamy flavor.</p>
-  </div>
+// Contact Form Alert
+const form = document.querySelector("form");
  
-  <div class="feature-card slide-up">
-    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=1000&auto=format&fit=crop" alt="Ice cream">
-    <h3>Ice Cream Specials</h3>
-    <p>Enjoy colorful and refreshing ice cream collections.</p>
-  </div>
-</section>
+if(form){
+    form.addEventListener("submit", (e) => {
+        e.preventDefault();
  
-<section class="cta">
-  <h2>Experience Happiness In Every Bite</h2>
-  <a href="contact.html" class="btn">Order Now</a>
-</section>
-// WHATSAPP CONTACT FORM
+        alert("Thank you for contacting Crave It Desserts! 🍰");
+ 
+        form.reset();
+    });
+}
+ 
+// Smooth Fade Hero Text
+window.addEventListener("load", () => {
+    document.querySelector(".hero-content").classList.add("fade-in");
+});
+ 
+// Button Hover Glow
+const buttons = document.querySelectorAll(".btn, button");
+ 
+buttons.forEach(button => {
+    button.addEventListener("mouseenter", () => {
+        button.style.transform = "scale(1.05)";
+    });
+ 
+    button.addEventListener("mouseleave", () => {
+        button.style.transform = "scale(1)";
+    });
+});
+ 
+// Dynamic Navbar Shadow
+window.addEventListener("scroll", () => {
+    const header = document.querySelector("header");
+ 
+    if(window.scrollY > 50){
+        header.style.boxShadow = "0 8px 25px rgba(0,0,0,0.2)";
+    } else {
+        header.style.boxShadow = "0 5px 20px rgba(0,0,0,0.1)";
+    }
+});
+ 
+// Auto Close Mobile Menu
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("active");
+    });
+});
+ // WHATSAPP CONTACT FORM
 const whatsappForm =
 document.getElementById("whatsapp-form");
  
@@ -92,13 +112,6 @@ ${message}`;
  
     }
  
-<footer>
-  <p>© 2026 Crave It Desserts | Designed Professionally</p>
-</footer>
- 
-<script src="script.js"></script>
-</body>
-</html>
- 
+    );
  
 
