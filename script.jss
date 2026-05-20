@@ -51,6 +51,46 @@
   <h2>Experience Happiness In Every Bite</h2>
   <a href="contact.html" class="btn">Order Now</a>
 </section>
+// WHATSAPP CONTACT FORM
+const whatsappForm =
+document.getElementById("whatsapp-form");
+ 
+if (whatsappForm) {
+ 
+    whatsappForm.addEventListener(
+    "submit",
+    function(e) {
+ 
+        e.preventDefault();
+ 
+        let name =
+        document.getElementById("name").value;
+ 
+        let email =
+        document.getElementById("email").value;
+ 
+        let message =
+        document.getElementById("message").value;
+ 
+        let phoneNumber =
+        "26778119183";
+ 
+        let whatsappMessage =
+`Hello Crave It Desserts!
+ 
+Name: ${name}
+ 
+Email: ${email}
+ 
+Message:
+${message}`;
+ 
+        let url =
+`https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+ 
+        window.open(url, "_blank");
+ 
+    }
  
 <footer>
   <p>© 2026 Crave It Desserts | Designed Professionally</p>
