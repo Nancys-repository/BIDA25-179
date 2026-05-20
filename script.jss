@@ -1,43 +1,64 @@
-<main class="container content-section">
-    <h2 class="text-center mb-5">Contact Us</h2>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="shape-box">
-                <h4>Reach Out</h4>
-                <hr>
-                <p><strong>Phone:</strong> 71750854</p>
-                <p><strong>WhatsApp:</strong> 78119183</p>
-                <p><strong>Location:</strong> Gaborone</p>
-                <div class="mt-3">
-                    <img src="https://cdn-icons-png.flaticon.com/512/174/174876.png" width="30" class="me-2">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2111/2111646.png" width="30" class="me-2">
-                </div>
-            </div>
-        </div>
+<!DOCTYPE html>
+<body>
  
-        <div class="col-md-6">
-            <div class="shape-box-alt">
-                <h4>Place an Order</h4>
-                <form id="waForm">
-                    <div class="mb-3">
-                        <input type="text" id="custName" class="form-control" placeholder="Your Name" required>
-                    </div>
-                    <div class="mb-3">
-                        <textarea id="orderMsg" class="form-control" rows="3" placeholder="What can we bake for you?" required></textarea>
-                    </div>
-                    <button type="button" onclick="sendToWhatsApp()" class="btn btn-crave w-100">Send via WhatsApp</button>
-                </form>
-            </div>
-        </div>
+<header>
+  <nav class="navbar">
+    <div class="logo">CRAVE IT DESSERTS</div>
+ 
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+ 
+    <div class="menu-toggle" id="menu-toggle">
+      ☰
     </div>
-</main>
+  </nav>
+</header>
  
-<script>
-function sendToWhatsApp() {
-    let name = document.getElementById('custName').value;
-    let msg = document.getElementById('orderMsg').value;
-    let phone = "26778119183"; // International format for Gaborone
-    let url = `https://wa.me/${phone}?text=Hello, I am ${name}. ${msg}`;
-    window.open(url, '_blank').focus();
-}
-</script>
+<section class="hero">
+  <div class="hero-content fade-in">
+    <h1>Delicious Desserts Made With Love</h1>
+    <p>Luxury desserts, creamy ice creams and unforgettable sweet experiences.</p>
+    <a href="menu.html" class="btn">Explore Menu</a>
+  </div>
+</section>
+ 
+<section class="features">
+  <div class="feature-card slide-up">
+    <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=1000&auto=format&fit=crop" alt="Dessert">
+    <h3>Premium Desserts</h3>
+    <p>Freshly prepared desserts made with quality ingredients.</p>
+  </div>
+ 
+  <div class="feature-card slide-up">
+    <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1000&auto=format&fit=crop" alt="Milkshake">
+    <h3>Sweet Drinks</h3>
+    <p>Milkshakes and sweet beverages with rich creamy flavor.</p>
+  </div>
+ 
+  <div class="feature-card slide-up">
+    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=1000&auto=format&fit=crop" alt="Ice cream">
+    <h3>Ice Cream Specials</h3>
+    <p>Enjoy colorful and refreshing ice cream collections.</p>
+  </div>
+</section>
+ 
+<section class="cta">
+  <h2>Experience Happiness In Every Bite</h2>
+  <a href="contact.html" class="btn">Order Now</a>
+</section>
+ 
+<footer>
+  <p>© 2026 Crave It Desserts | Designed Professionally</p>
+</footer>
+ 
+<script src="script.js"></script>
+</body>
+</html>
+ 
+ 
+

@@ -1,69 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu | Crave It Desserts</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
 <body>
  
-    <header>
-        <div class="brand-name">CRAVE IT DESSERTS</div>
-        <nav class="navbar navbar-expand-lg navbar-custom">
-            <div class="container-fluid">
-                <ul class="navbar-nav w-100 d-flex justify-content-around">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+<header>
+  <nav class="navbar">
+    <div class="logo">CRAVE IT DESSERTS</div>
  
-    <main class="container content-section">
-        <h2 class="text-center mb-4 display-5">Our Sweet Menu</h2>
-        
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-4">
-                <div class="card card-dessert p-3">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="fw-bold">Oreo Ice-Cream Sandwich</h5>
-                        <span class="text-muted">P25.00</span>
-                    </div>
-                    <p class="small">Creamy vanilla bean ice cream pressed between two giant Oreo cookies.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="card card-dessert p-3">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="fw-bold">Classic Custard & Jelly</h5>
-                        <span class="text-muted">P15.00</span>
-                    </div>
-                    <p class="small">Smooth homemade vanilla custard paired with strawberry jelly layers.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="card card-dessert p-3">
-                    <div class="d-flex justify-content-between">
-                        <h5 class="fw-bold">Fruit Parfait</h5>
-                        <span class="text-muted">P35.00</span>
-                    </div>
-                    <p class="small">Fresh seasonal fruits, Greek yogurt, and crunchy honey granola.</p>
-                </div>
-            </div>
-         </div>
-            </div>
-        </div>
-    </main>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
  
-    <footer>
-        <p>&copy; Crave It Desserts 2026</p>
-    </footer>
+    <div class="menu-toggle" id="menu-toggle">
+      ☰
+    </div>
+  </nav>
+</header>
  
+<section class="hero">
+  <div class="hero-content fade-in">
+    <h1>Delicious Desserts Made With Love</h1>
+    <p>Luxury desserts, creamy ice creams and unforgettable sweet experiences.</p>
+    <a href="menu.html" class="btn">Explore Menu</a>
+  </div>
+</section>
+ 
+<section class="features">
+  <div class="feature-card slide-up">
+    <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=1000&auto=format&fit=crop" alt="Dessert">
+    <h3>Premium Desserts</h3>
+    <p>Freshly prepared desserts made with quality ingredients.</p>
+  </div>
+ 
+  <div class="feature-card slide-up">
+    <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1000&auto=format&fit=crop" alt="Milkshake">
+    <h3>Sweet Drinks</h3>
+    <p>Milkshakes and sweet beverages with rich creamy flavor.</p>
+  </div>
+ 
+  <div class="feature-card slide-up">
+    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=1000&auto=format&fit=crop" alt="Ice cream">
+    <h3>Ice Cream Specials</h3>
+    <p>Enjoy colorful and refreshing ice cream collections.</p>
+  </div>
+</section>
+ 
+<section class="cta">
+  <h2>Experience Happiness In Every Bite</h2>
+  <a href="contact.html" class="btn">Order Now</a>
+</section>
+ 
+<footer>
+  <p>© 2026 Crave It Desserts | Designed Professionally</p>
+</footer>
+ 
+<script src="script.js"></script>
 </body>
 </html>
  
