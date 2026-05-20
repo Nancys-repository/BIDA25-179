@@ -1,0 +1,105 @@
+/* Importing Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Swash:wght@400;700&family=Helvetica:wght@400;700&display=swap');
+ 
+:root {
+    --thulian: #DE6FA1;
+    --carnation: #FFA6C9;
+    --creamy-white: #FFFDF5;
+}
+ 
+body {
+    background-color: var(--carnation);
+    font-family: 'Helvetica', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+ 
+/* Header & Navigation */
+header {
+    background-color: var(--thulian);
+    background-image: url('68624863_sl_101322_53290_19.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 5px solid var(--thulian);
+}
+ 
+.brand-name {
+    font-family: 'Cherry Swash', cursive;
+    font-size: 24px;
+    color: #000;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.3); /* Soft blur to see text over image */
+    border-radius: 15px;
+}
+ 
+.navbar-custom {
+    width: 80%;
+}
+ 
+.nav-link {
+    color: black !important;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+ 
+/* Body Content */
+.content-section {
+    padding: 60px 0;
+    min-height: 60px;
+}
+ 
+.card-dessert {
+    border: none;
+    border-radius: 15px;
+    transition: transform 0.3s;
+    background: var(--creamy-white);
+}
+ 
+.card-dessert:hover {
+    transform: scale(1.05);
+}
+ 
+.shape-box {
+    background-color: var(--creamy-white);
+    padding: 30px;
+    border-radius: 50px 20px 50px 20px; /* Custom Shape 1 */
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+}
+ 
+.shape-box-alt {
+    background-color: var(--creamy-white);
+    padding: 30px;
+    border-radius: 20px 50px 20px 50px; /* Custom Shape 2 */
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+}
+ 
+/* Footer */
+footer {
+    background-color: var(--thulian);
+    color: black;
+    padding: 20px 0;
+    text-align: center;
+    font-weight: bold;
+}
+ 
+.btn-crave {
+    background-color: var(--thulian);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+}
+ 
+.btn-crave:hover {
+    background-color: #c45d8d;
+    color: white;
+}

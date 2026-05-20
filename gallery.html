@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Crave It Desserts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .cart-status {
+            background: #FFF;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+ 
+    <header>
+        <div class="brand-name">CRAVE IT DESSERTS</div>
+        
+        <div id="cart-display" class="cart-status">Items: 0 | Total: P0.00</div>
+ 
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <div class="container-fluid">
+                <ul class="navbar-nav w-100 d-flex justify-content-around">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="menu.html">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+ 
+    <main class="container content-section">
+        <h2 class="text-center mb-5">Dessert Gallery</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card card-dessert shadow-sm overflow-hidden">
+                    <img src="gallery1.jpg" class="card-img-top" alt="Dessert">
+                    <div class="card-body text-center">
+                        <h6>Signature Parfait</h6>
+                        <button onclick="addToCart(35)" class="btn btn-crave btn-sm">Add to Cart - P35</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-dessert shadow-sm overflow-hidden">
+                    <img src="gallery2.jpg" class="card-img-top" alt="Dessert">
+                    <div class="card-body text-center">
+                        <h6>Jelly Delight</h6>
+                        <button onclick="addToCart(15)" class="btn btn-crave btn-sm">Add to Cart - P15</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-dessert shadow-sm overflow-hidden">
+                    <img src="gallery3.jpg" class="card-img-top" alt="Dessert">
+                    <div class="card-body text-center">
+                        <h6>Oreo Sandwich</h6>
+                        <button onclick="addToCart(25)" class="btn btn-crave btn-sm">Add to Cart - P25</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+ 
+    <footer>
+        <p>&copy; Crave It Desserts 2026</p>
+    </footer>
+ 
+    <script>
+        let count = 0;
+        let total = 0;
+ 
+        function addToCart(price) {
+            count++;
+            total += price;
+            document.getElementById('cart-display').innerText = `Items: ${count} | Total: P${total.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
+ 
