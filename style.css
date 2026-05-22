@@ -268,3 +268,21 @@ letter-spacing:1px;
   }
 
     }
+.owner-image{
+    width: 150px;
+    height: 150px;
+    margin: 20px auto 25px auto;
+    background: white;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.owner-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
