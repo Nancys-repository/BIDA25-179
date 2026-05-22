@@ -235,3 +235,37 @@ footer{
   }
 
     }
+.logo-container{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo-container img{
+  width:65px;
+  height:65px;
+  object-fit:cover;
+  border-radius:50%;
+  border:3px solid #ffb6c1;
+  background:#fff4f7;
+}
+
+.logo-text{
+  font-size:28px;
+  font-weight:bold;
+  color:#ff6fa5;
+  letter-spacing:1px;
+}
+
+@media(max-width:768px){
+
+  .logo-container img{
+    width:50px;
+    height:50px;
+  }
+
+  .logo-text{
+    font-size:20px;
+  }
+
+    }
