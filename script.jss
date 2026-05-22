@@ -1,73 +1,25 @@
-let cart = JSON.parse(localStorage.getItem("cart")) || [];
+let cartCount = 0;
+let cartTotal = 0;
 
-const cartCountElements =
-document.querySelectorAll("#cart-count");
+const cartButtons = document.querySelectorAll(".add-cart");
 
-const cartTotalElements =
-document.querySelectorAll("#cart-total");
+cartButtons.forEach(button => {
 
-function updateCart(){
+    button.addEventListener("click", () => {
 
-    let totalItems = 0;
-    let totalPrice = 0;
+        cartCount++;
 
-    cart.forEach(item => {
+        let price = Number(button.getAttribute("data-price"));
 
-        totalItems += item.quantity;
-        totalPrice += item.price * item.quantity;
+        cartTotal += price;
 
-    });
+        document.getElementById("cart-count").innerText = cartCount;
 
-    cartCountElements.forEach(element => {
-
-        element.innerText = totalItems;
+        document.getElementById("cart-total").innerText = cartTotal;
 
     });
 
-    cartTotalElements.forEach(element => {
-
-        element.innerText = "P" + totalPrice;
-
-    });
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-}
-
-function addToCart(price, name){
-
-    const existingItem =
-    cart.find(item => item.name === name);
-
-    if(existingItem){
-
-        existingItem.quantity++;
-
-    } else {
-
-        cart.push({
-            name: name,
-            price: price,
-            quantity: 1
-        });
-
-    }
-
-    updateCart();
-
-    alert(name + " added to cart!");
-}
-
-function clearCart(){
-
-    cart = [];
-
-    updateCart();
-
-    alert("Cart cleared!");
-
-}
-
-updateCart();
+});
 
 
 
@@ -180,26 +132,3 @@ Message: ${message}`;
 
     });
 
-}
-let cartCount = 0;
-let cartTotal = 0;
-
-const buttons = document.querySelectorAll(".add-cart");
-
-buttons.forEach(button => {
-
-    button.addEventListener("click", () => {
-
-        cartCount++;
-
-        const price = Number(button.dataset.price);
-
-        cartTotal += price;
-
-        document.getElementById("cart-count").textContent = cartCount;
-
-        document.getElementById("cart-total").textContent = cartTotal;
-
-    });
-
-});
