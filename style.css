@@ -12,7 +12,7 @@ body{
 }
 
 header{
-  background:white;
+  background:#f7c6d0;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -24,9 +24,10 @@ header{
 }
 
 .logo{
-  font-size:28px;
+  font-size:38px;
   font-weight:bold;
-  color:#ff6fa5;
+  color:#d88ca0;
+  font-family:"Sevillana", cursive;
 }
 
 nav{
@@ -241,31 +242,29 @@ footer{
   gap:12px;
 }
 
-.logo-container img{
-  width:65px;
-  height:65px;
-  object-fit:cover;
+.logo img{
+  width:90px;
+  height:90px;
   border-radius:50%;
-  border:3px solid #ffb6c1;
-  background:#fff4f7;
+  object-fit:cover;
 }
 
 .logo-text{
-  font-size:28px;
-  font-weight:bold;
-  color:#ff6fa5;
-  letter-spacing:1px;
+font-family: "Sevillana", cursive;
+color: #d88ca0;
+font-size: 38px;
+letter-spacing:1px;
 }
 
 @media(max-width:768px){
 
   .logo-container img{
-    width:50px;
-    height:50px;
+    width:70px;
+    height:70px;
   }
 
   .logo-text{
-    font-size:20px;
+    font-size:38px;
   }
 
     }
