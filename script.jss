@@ -181,3 +181,25 @@ Message: ${message}`;
     });
 
 }
+let cartCount = 0;
+let cartTotal = 0;
+
+const buttons = document.querySelectorAll(".add-cart");
+
+buttons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        cartCount++;
+
+        const price = Number(button.dataset.price);
+
+        cartTotal += price;
+
+        document.getElementById("cart-count").textContent = cartCount;
+
+        document.getElementById("cart-total").textContent = cartTotal;
+
+    });
+
+});
