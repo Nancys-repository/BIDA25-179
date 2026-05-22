@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 *{
   margin:0;
   padding:0;
@@ -250,11 +249,11 @@ footer{
   object-fit:cover;
 }
 
-.logo-text{
-font-family: "Sevillana", cursive;
-color: #d88ca0;
-font-size: 38px;
-letter-spacing:1px;
+.logo{
+    font-family:'Georgia', serif;
+    font-size:32px;
+    font-weight:bold;
+    letter-spacing:2px;
 }
 
 @media(max-width:768px){
