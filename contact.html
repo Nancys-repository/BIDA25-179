@@ -1,62 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Crave It Desserts</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
- 
+
 <header>
-  <nav class="navbar">
-    <div class="logo">CRAVE IT DESSERTS</div>
- 
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
- 
-    <div class="menu-toggle" id="menu-toggle">
-      ☰
-    </div>
-  </nav>
+
+<div class="logo">CRAVE IT DESSERTS</div>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="menu.html">Menu</a>
+<a href="about.html">About</a>
+<a href="gallery.html">Gallery</a>
+<a class="active" href="contact.html">Contact</a>
+</nav>
+
 </header>
- 
-<section class="contact-section">
-  <div class="contact-box">
-    <h1>Contact Us</h1>
- 
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message"></textarea>
-      <button type="submit">Send Message</button>
-    </form>
 
-      <form id="whatsapp-form">
- 
-    <input type="text" id="name" placeholder="Your Name" required>
- 
-    <input type="email" id="email" placeholder="Your Email" required>
- 
-    <textarea id="message" placeholder="Your Message" required></textarea>
- 
-    <button type="submit">Send To WhatsApp</button>
- 
+<section class="categories">
 
-    </form>
-  </div>
+<h2>Contact Us</h2>
+
+<form id="contactForm" class="card"
+style="padding:40px; max-width:600px; margin:auto;">
+
+<input type="text"
+id="name"
+placeholder="Your Name"
+required
+style="width:100%; padding:15px; margin-bottom:20px;">
+
+<input type="email"
+id="email"
+placeholder="Your Email"
+required
+style="width:100%; padding:15px; margin-bottom:20px;">
+
+<textarea id="message"
+placeholder="Your Message"
+required
+style="width:100%; height:150px; padding:15px;"></textarea>
+
+<br><br>
+
+<button class="btn" type="submit">
+Send Message
+</button>
+
+</form>
+
 </section>
- 
-<footer>
-  <p>© 2026 Crave It Desserts</p>
-</footer>
- 
-<script src="script.js"></script>
+
+<script>
+
+document.getElementById("contactForm")
+.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let name = document.getElementById("name").value;
+let email = document.getElementById("email").value;
+let message = document.getElementById("message").value;
+
+let whatsappMessage =
+`Name: ${name}%0A
+Email: ${email}%0A
+Message: ${message}`;
+
+window.open(
+`https://wa.me/26778119183?text=${whatsappMessage}`,
+"_blank"
+);
+
+});
+
+</script>
+
 </body>
 </html>
- 
