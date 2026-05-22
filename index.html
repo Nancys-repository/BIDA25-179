@@ -1,68 +1,164 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Crave It Desserts</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CRAVE IT DESSERTS</title>
+
+  <link rel="stylesheet" href="style.css"/>
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
 </head>
+
 <body>
- 
+
 <header>
-  <nav class="navbar">
-    <div class="logo">CRAVE IT DESSERTS</div>
- 
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="menu.html">Menu</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
- 
-    <div class="menu-toggle" id="menu-toggle">
-      ☰
-    </div>
+  <div class="logo">CRAVE IT DESSERTS</div>
+
+  <nav>
+    <a class="active" href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
   </nav>
+
+  <div class="header-icons">
+
+    <button id="darkModeBtn">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <div class="cart-icon">
+      <i class="fa-solid fa-cart-shopping"></i>
+      <span id="cart-count">0</span>
+    </div>
+
+  </div>
 </header>
- 
+
 <section class="hero">
-  <div class="hero-content fade-in">
-    <h1>Delicious Desserts Made With Love</h1>
-    <p>Luxury desserts, creamy ice creams and unforgettable sweet experiences.</p>
-    <a href="menu.html" class="btn">Explore Menu</a>
+
+  <div class="hero-text">
+    <h1>Bite Into Happiness</h1>
+    <p>Fresh desserts made with love everyday.</p>
+    <a href="menu.html" class="btn">Order Now</a>
   </div>
+
 </section>
- 
-<section class="features">
-  <div class="feature-card slide-up">
-    <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?q=80&w=1000&auto=format&fit=crop" alt="Dessert">
-    <h3>Premium Desserts</h3>
-    <p>Freshly prepared desserts made with quality ingredients.</p>
+
+<section class="categories">
+
+  <h2>Handcrafted Desserts</h2>
+
+  <div class="category-grid">
+
+    <div class="card">
+      <img src="images/chocolate.jpg" alt="">
+      <h3>Chocolate Lovers</h3>
+      <p>Rich chocolate treats for every sweet craving.</p>
+      <a href="gallery.html#chocolate" class="btn">View</a>
+    </div>
+
+    <div class="card">
+      <img src="images/fruity.jpg" alt="">
+      <h3>Fruity & Refreshing</h3>
+      <p>Fresh fruity desserts full of sweet flavors.</p>
+      <a href="gallery.html#fruity" class="btn">View</a>
+    </div>
+
+    <div class="card">
+      <img src="images/frozen.jpg" alt="">
+      <h3>Frozen Delicacies</h3>
+      <p>Cold creamy desserts perfect for hot days.</p>
+      <a href="gallery.html#frozen" class="btn">View</a>
+    </div>
+
+    <div class="card">
+      <img src="images/pastry.jpg" alt="">
+      <h3>Fried & Pastry Desserts</h3>
+      <p>Crispy pastries with delightful sweet fillings.</p>
+      <a href="gallery.html#pastry" class="btn">View</a>
+    </div>
+
   </div>
- 
-  <div class="feature-card slide-up">
-    <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1000&auto=format&fit=crop" alt="Milkshake">
-    <h3>Sweet Drinks</h3>
-    <p>Milkshakes and sweet beverages with rich creamy flavor.</p>
-  </div>
- 
-  <div class="feature-card slide-up">
-    <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?q=80&w=1000&auto=format&fit=crop" alt="Ice cream">
-    <h3>Ice Cream Specials</h3>
-    <p>Enjoy colorful and refreshing ice cream collections.</p>
-  </div>
+
 </section>
- 
-<section class="cta">
-  <h2>Experience Happiness In Every Bite</h2>
-  <a href="contact.html" class="btn">Order Now</a>
+
+<section class="featured">
+
+  <h2>Featured Desserts</h2>
+
+  <div class="featured-grid">
+
+    <div class="dessert-card">
+      <img src="images/redvelvet.jpg" alt="">
+      <h3>Red Velvet Cake</h3>
+      <p>P35</p>
+      <button onclick="addToCart(35)" class="btn">
+        Add To Cart
+      </button>
+    </div>
+
+    <div class="dessert-card">
+      <img src="images/cheesecake.jpg" alt="">
+      <h3>Classic Cheesecake</h3>
+      <p>P30</p>
+      <button onclick="addToCart(30)" class="btn">
+        Add To Cart
+      </button>
+    </div>
+
+    <div class="dessert-card">
+      <img src="images/cupcakes.jpg" alt="">
+      <h3>Vanilla Cupcakes</h3>
+      <p>P25</p>
+      <button onclick="addToCart(25)" class="btn">
+        Add To Cart
+      </button>
+    </div>
+
+  </div>
+
 </section>
- 
+
 <footer>
-  <p>© 2026 Crave It Desserts | Designed Professionally</p>
+
+  <div class="footer-content">
+
+    <div>
+      <h3>CRAVE IT DESSERTS</h3>
+      <p>Sweet desserts made with love and happiness.</p>
+    </div>
+
+    <div>
+      <h3>Socials</h3>
+
+      <div class="socials">
+
+        <a href="https://wa.me/26778119183">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <a href="https://www.tiktok.com/@craveitdesserts">
+          <i class="fa-brands fa-tiktok"></i>
+        </a>
+
+        <a href="mailto:craveitdesserts@gmail.com">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+
 </footer>
- 
+
 <script src="script.js"></script>
+
 </body>
 </html>
  
