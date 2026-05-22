@@ -1,134 +1,99 @@
-let cartCount = 0;
-let cartTotal = 0;
+document.addEventListener("DOMContentLoaded", () => {
 
-const cartButtons = document.querySelectorAll(".add-cart");
+    let cartCount = 0;
+    let cartTotal = 0;
 
-cartButtons.forEach(button => {
+    const cartButtons = document.querySelectorAll(".add-cart");
 
-    button.addEventListener("click", () => {
+    cartButtons.forEach(button => {
 
-        cartCount++;
+        button.addEventListener("click", () => {
 
-        let price = Number(button.getAttribute("data-price"));
+            cartCount++;
 
-        cartTotal += price;
+            let price = Number(button.dataset.price);
 
-        document.getElementById("cart-count").innerText = cartCount;
+            cartTotal += price;
 
-        document.getElementById("cart-total").innerText = cartTotal;
+            document.getElementById("cart-count").textContent = cartCount;
 
-    });
-
-});
-
-
-
-
-
-const darkModeBtn =
-document.getElementById("darkModeBtn");
-
-if(darkModeBtn){
-
-    if(localStorage.getItem("darkMode") === "enabled"){
-
-        document.body.classList.add("dark-mode");
-
-    }
-
-    darkModeBtn.addEventListener("click", () => {
-
-        document.body.classList.toggle("dark-mode");
-
-        if(document.body.classList.contains("dark-mode")){
-
-            localStorage.setItem("darkMode", "enabled");
-
-        } else {
-
-            localStorage.setItem("darkMode", "disabled");
-
-        }
-
-    });
-
-}
-
-
-
-
-
-const menuToggle =
-document.getElementById("menuToggle");
-
-const nav =
-document.querySelector("nav");
-
-if(menuToggle){
-
-    menuToggle.addEventListener("click", () => {
-
-        nav.classList.toggle("show-nav");
-
-    });
-
-}
-
-
-
-
-
-const links =
-document.querySelectorAll("nav a");
-
-links.forEach(link => {
-
-    link.addEventListener("click", function(){
-
-        links.forEach(navLink => {
-
-            navLink.classList.remove("active");
+            document.getElementById("cart-total").textContent = cartTotal;
 
         });
 
-        this.classList.add("active");
+    });
+
+
+
+
+    const darkModeBtn =
+    document.getElementById("darkModeBtn");
+
+    if(darkModeBtn){
+
+        if(localStorage.getItem("darkMode") === "enabled"){
+
+            document.body.classList.add("dark-mode");
+
+        }
+
+        darkModeBtn.addEventListener("click", () => {
+
+            document.body.classList.toggle("dark-mode");
+
+            if(document.body.classList.contains("dark-mode")){
+
+                localStorage.setItem("darkMode", "enabled");
+
+            } else {
+
+                localStorage.setItem("darkMode", "disabled");
+
+            }
+
+        });
+
+    }
+
+
+
+
+    const menuToggle =
+    document.getElementById("menuToggle");
+
+    const nav =
+    document.querySelector("nav");
+
+    if(menuToggle){
+
+        menuToggle.addEventListener("click", () => {
+
+            nav.classList.toggle("show-nav");
+
+        });
+
+    }
+
+
+
+
+    const links =
+    document.querySelectorAll("nav a");
+
+    links.forEach(link => {
+
+        link.addEventListener("click", function(){
+
+            links.forEach(navLink => {
+
+                navLink.classList.remove("active");
+
+            });
+
+            this.classList.add("active");
+
+        });
 
     });
 
 });
-
-
-
-
-
-const contactForm =
-document.getElementById("contactForm");
-
-if(contactForm){
-
-    contactForm.addEventListener("submit", function(e){
-
-        e.preventDefault();
-
-        let name =
-        document.getElementById("name").value;
-
-        let email =
-        document.getElementById("email").value;
-
-        let message =
-        document.getElementById("message").value;
-
-        let whatsappMessage =
-        `Hello CRAVE IT DESSERTS!%0A%0A
-Name: ${name}%0A
-Email: ${email}%0A
-Message: ${message}`;
-
-        window.open(
-        `https://wa.me/26778119183?text=${whatsappMessage}`,
-        "_blank"
-        );
-
-    });
-
