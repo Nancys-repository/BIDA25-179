@@ -1,87 +1,73 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     // =========================
-    // CART VARIABLES
+    // CART
     // =========================
+
     let cart = [];
 
-    // CART ELEMENTS
-    const cartCount = document.getElementById("cart-count");
-    const cartTotal = document.getElementById("cart-total");
-    const cartItems = document.getElementById("cart-items");
+    const cartCount =
+        document.getElementById("cart-count");
 
-    // =========================
-    // ADD TO CART BUTTONS
-    // =========================
-    const cartButtons = document.querySelectorAll(".add-cart");
+    const cartTotal =
+        document.getElementById("cart-total");
 
-    cartButtons.forEach(button => {
+    const cartItems =
+        document.getElementById("cart-items");
+
+    const buttons =
+        document.querySelectorAll(".add-cart");
+
+    buttons.forEach(button => {
 
         button.addEventListener("click", () => {
 
-            // GET CARD
-            const card = button.parentElement;
+            const card =
+                button.parentElement;
 
-            // GET NAME
-            const itemName =
+            const name =
                 card.querySelector("h3").textContent;
 
-            // GET PRICE
-            const itemPrice =
+            const price =
                 Number(button.dataset.price);
 
-            // ADD ITEM TO CART
             cart.push({
-                name: itemName,
-                price: itemPrice
+                name: name,
+                price: price
             });
 
-            // UPDATE CART
             updateCart();
-
-            // BUTTON FEEDBACK
-            button.textContent = "Added ✓";
-
-            setTimeout(() => {
-                button.textContent = "Add to Cart";
-            }, 1000);
 
         });
 
     });
 
-    // =========================
-    // UPDATE CART FUNCTION
-    // =========================
     function updateCart() {
 
         // UPDATE COUNT
         cartCount.textContent = cart.length;
 
-        // CALCULATE TOTAL
+        // UPDATE TOTAL
         let total = 0;
 
         cart.forEach(item => {
             total += item.price;
         });
 
-        // DISPLAY TOTAL
         cartTotal.textContent = total;
 
-        // CLEAR OLD ITEMS
+        // CLEAR ITEMS
         cartItems.innerHTML = "";
 
         // DISPLAY ITEMS
         cart.forEach((item, index) => {
 
-            // CREATE ITEM DIV
-            const itemDiv =
+            const div =
                 document.createElement("div");
 
-            itemDiv.classList.add("cart-item");
+            div.classList.add("cart-item");
 
-            // ADD CONTENT
-            itemDiv.innerHTML = `
+            div.innerHTML = `
                 <span>
                     ${item.name} - P${item.price}
                 </span>
@@ -92,24 +78,109 @@ document.addEventListener("DOMContentLoaded", () => {
             `;
 
             // REMOVE BUTTON
-            const removeBtn =
-                itemDiv.querySelector(".remove-btn");
+            div.querySelector(".remove-btn")
+                .addEventListener("click", () => {
 
-            removeBtn.addEventListener("click", () => {
+                    cart.splice(index, 1);
 
-                // REMOVE ITEM
-                cart.splice(index, 1);
+                    updateCart();
 
-                // REFRESH CART
-                updateCart();
+                });
 
-            });
-
-            // ADD TO CART DISPLAY
-            cartItems.appendChild(itemDiv);
+            cartItems.appendChild(div);
 
         });
 
     }
+
+    // =========================
+    // DARK MODE
+    // =========================
+
+    const darkModeBtn =
+        document.getElementById("darkModeBtn");
+
+    if (darkModeBtn) {
+
+        // LOAD SAVED MODE
+        if (
+            localStorage.getItem("darkMode")
+            === "enabled"
+        ) {
+
+            document.body.classList.add("dark-mode");
+
+        }
+
+        // BUTTON CLICK
+        darkModeBtn.addEventListener("click", () => {
+
+            document.body.classList.toggle("dark-mode");
+
+            // SAVE MODE
+            if (
+                document.body.classList.contains("dark-mode")
+            ) {
+
+                localStorage.setItem(
+                    "darkMode",
+                    "enabled"
+                );
+
+            } else {
+
+                localStorage.setItem(
+                    "darkMode",
+                    "disabled"
+                );
+
+            }
+
+        });
+
+    }
+
+    // =========================
+    // MOBILE MENU
+    // =========================
+
+    const menuToggle =
+        document.getElementById("menuToggle");
+
+    const nav =
+        document.querySelector("nav");
+
+    if (menuToggle) {
+
+        menuToggle.addEventListener("click", () => {
+
+            nav.classList.toggle("show-nav");
+
+        });
+
+    }
+
+    // =========================
+    // ACTIVE NAV LINKS
+    // =========================
+
+    const links =
+        document.querySelectorAll("nav a");
+
+    links.forEach(link => {
+
+        link.addEventListener("click", function () {
+
+            links.forEach(navLink => {
+
+                navLink.classList.remove("active");
+
+            });
+
+            this.classList.add("active");
+
+        });
+
+    });
 
 });
