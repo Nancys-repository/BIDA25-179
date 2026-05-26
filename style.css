@@ -1,75 +1,74 @@
 *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins', sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
 }
 
 body{
-  background:#fff4f7;
-  color:#333;
-  line-height:1.6;
+  background:#fff4f7;
+  color:#333;
+  line-height:1.6;
 }
 
 header{
-  background:#f7c6d0;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:15px 8%;
-  position:sticky;
-  top:0;
-  z-index:1000;
-  box-shadow:0 2px 10px rgba(0,0,0,0.1);
+  background:#f7c6d0;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 8%;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
 .logo{
-    font-family:'Georgia', serif;
-    font-size:32px;
-    font-weight:bold;
-    letter-spacing:2px;
+    font-family:'Georgia', serif;
+    font-size:32px;
+    font-weight:bold;
+    letter-spacing:2px;
 }
 
 nav{
-  display:flex;
-  gap:20px;
+  display:flex;
+  gap:20px;
 }
 
 nav a{
-  text-decoration:none;
-  color:#333;
-  padding:8px 15px;
-  border-radius:20px;
-  transition:0.3s;
+  text-decoration:none;
+  color:#333;
+  padding:8px 15px;
+  border-radius:20px;
+  transition:0.3s;
 }
 
 nav a:hover,
 nav a.active{
-  background:#ffd6e5;
-  color:#000;
+  background:#ffd6e5;
+  color:#000;
 }
 
 .header-icons{
-  display:flex;
-  align-items:center;
-  gap:15px;
+  display:flex;
+  align-items:center;
+  gap:15px;
 }
 
 #darkModeBtn{
-  border:none;
-  background:#ffb6c1;
-  color:white;
-  padding:10px;
-  border-radius:50%;
-  cursor:pointer;
+  border:none;
+  background:#ffb6c1;
+  color:white;
+  padding:10px;
+  border-radius:50%;
+  cursor:pointer;
 }
 
 .cart-icon{
-  position:relative;
-  color:#ff6fa5;
-  font-size:22px;
+  position:relative;
+  color:#ff6fa5;
+  font-size:22px;
 }
-
 #cart-count{
   position:absolute;
   top:-10px;
@@ -185,7 +184,6 @@ footer{
   gap:15px;
   margin-top:10px;
 }
-
 .socials a{
   width:45px;
   height:45px;
@@ -322,230 +320,4 @@ footer{
 .add-cart:hover{
     background:#ff8fab;
 }
-/* =========================
-   CART STYLING
-========================= */
 
-.cart-box{
-    background:white;
-    padding:15px;
-    border-radius:15px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
-
-#cart-items{
-    margin-top:15px;
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-}
-
-.cart-item{
-    background:#fff4f7;
-    padding:10px 15px;
-
-    border-radius:15px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    box-shadow:0 2px 5px rgba(0,0,0,0.08);
-}
-
-.remove-btn{
-    background:#ffb6c1;
-    color:white;
-
-    border:none;
-
-    padding:10px 18px;
-
-    border-radius:30px;
-
-    cursor:pointer;
-
-    transition:0.3s;
-}
-
-.remove-btn:hover{
-    background:#ff8fab;
-}
-/* =========================
-   GLOBAL RESPONSIVE FIXES
-========================= */
-
-img{
-    max-width:100%;
-    height:auto;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    overflow-x:hidden;
-}
-
-/* =========================
-   HEADER RESPONSIVE
-========================= */
-
-header{
-    flex-wrap:wrap;
-    gap:15px;
-}
-
-nav{
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-/* =========================
-   MOBILE MENU
-========================= */
-
-#menuToggle{
-    display:none;
-    font-size:28px;
-    cursor:pointer;
-}
-
-/* =========================
-   TABLET DEVICES
-========================= */
-
-@media(max-width:992px){
-
-    .hero-text h1{
-        font-size:45px;
-    }
-
-    .hero-text p{
-        font-size:18px;
-    }
-
-    .featured-grid,
-    .category-grid{
-        grid-template-columns:
-        repeat(auto-fit,minmax(220px,1fr));
-    }
-
-}
-
-/* =========================
-   MOBILE DEVICES
-========================= */
-
-@media(max-width:768px){
-
-    header{
-        flex-direction:column;
-        text-align:center;
-        padding:15px 5%;
-    }
-
-    .logo{
-        flex-direction:column;
-    }
-
-    .logo img{
-        width:90px;
-        height:90px;
-    }
-
-    .logo-text{
-        font-size:28px;
-        text-align:center;
-    }
-
-    nav{
-        width:100%;
-        justify-content:center;
-        gap:10px;
-    }
-
-    nav a{
-        padding:10px 15px;
-        font-size:14px;
-    }
-
-    .hero{
-        height:auto;
-        padding:80px 20px;
-    }
-
-    .hero-text h1{
-        font-size:35px;
-    }
-
-    .hero-text p{
-        font-size:16px;
-    }
-
-    .categories,
-    .featured{
-        padding:50px 5%;
-    }
-
-    .featured-grid,
-    .category-grid{
-        grid-template-columns:1fr;
-    }
-
-    .dessert-card img,
-    .card img{
-        height:220px;
-    }
-
-    .menu-image{
-        height:300px;
-    }
-
-    .footer-content{
-        flex-direction:column;
-        text-align:center;
-    }
-
-    .socials{
-        justify-content:center;
-    }
-
-    .cart-box{
-        width:100%;
-    }
-
-    .cart-item{
-        flex-direction:column;
-        gap:10px;
-        text-align:center;
-    }
-
-}
-
-/* =========================
-   SMALL PHONES
-========================= */
-
-@media(max-width:480px){
-
-    .hero-text h1{
-        font-size:28px;
-    }
-
-    .hero-text p{
-        font-size:14px;
-    }
-
-    .btn,
-    .add-cart,
-    .remove-btn{
-        width:100%;
-    }
-
-    nav a{
-        width:100%;
-    }
-
-}
