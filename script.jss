@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.getElementById("cart-count").textContent = cartCount;
             document.getElementById("cart-total").textContent = cartTotal;
 
-            // OPTIONAL BUTTON FEEDBACK
+            // BUTTON FEEDBACK
             button.textContent = "Added ✓";
 
             setTimeout(() => {
@@ -37,16 +37,19 @@ document.addEventListener("DOMContentLoaded", () => {
     // DARK MODE
     const darkModeBtn = document.getElementById("darkModeBtn");
 
-    if (darkModeBtn) {
+    // LOAD SAVED THEME
+    if (localStorage.getItem("darkMode") === "enabled") {
+        document.body.classList.add("dark-mode");
+    }
 
-        if (localStorage.getItem("darkMode") === "enabled") {
-            document.body.classList.add("dark-mode");
-        }
+    // DARK MODE BUTTON
+    if (darkModeBtn) {
 
         darkModeBtn.addEventListener("click", () => {
 
             document.body.classList.toggle("dark-mode");
 
+            // SAVE THEME
             if (document.body.classList.contains("dark-mode")) {
                 localStorage.setItem("darkMode", "enabled");
             } else {
@@ -87,18 +90,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 });
-
-function toggleDarkMode(){
-    document.body.classList.toggle("dark-mode");
-
-    if(document.body.classList.contains("dark-mode")){
-        localStorage.setItem("theme","dark");
-    } else {
-        localStorage.setItem("theme","light");
-    }
-}
-
-if(localStorage.getItem("theme") === "dark"){
-    document.body.classList.add("dark-mode");
-}
-
