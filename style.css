@@ -323,8 +323,15 @@ footer{
     background:#ff8fab;
 }
 /* =========================
-   CART ITEMS
+   CART STYLING
 ========================= */
+
+.cart-box{
+    background:white;
+    padding:15px;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
 
 #cart-items{
     margin-top:15px;
@@ -333,23 +340,18 @@ footer{
     gap:10px;
 }
 
-/* INDIVIDUAL CART ITEM */
-
 .cart-item{
-    background:white;
-    padding:12px 15px;
+    background:#fff4f7;
+    padding:10px 15px;
+
     border-radius:15px;
 
     display:flex;
     justify-content:space-between;
     align-items:center;
 
-    box-shadow:0 4px 10px rgba(0,0,0,0.08);
-
-    font-size:15px;
+    box-shadow:0 2px 5px rgba(0,0,0,0.08);
 }
-
-/* REMOVE BUTTON */
 
 .remove-btn{
     background:#ffb6c1;
@@ -361,31 +363,11 @@ footer{
 
     border-radius:30px;
 
-    font-size:15px;
-
     cursor:pointer;
 
     transition:0.3s;
 }
 
-/* HOVER EFFECT */
-
 .remove-btn:hover{
     background:#ff8fab;
-}
-
-/* DARK MODE SUPPORT */
-
-.dark-mode .cart-item{
-    background:#2a2a2a;
-    color:white;
-}
-
-.dark-mode .remove-btn{
-    background:#ff8fab;
-    color:white;
-}
-
-.dark-mode .remove-btn:hover{
-    background:#ff6fa5;
 }
