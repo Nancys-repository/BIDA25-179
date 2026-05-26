@@ -5,23 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // =========================
     let cart = [];
 
-    // CART DISPLAY ELEMENTS
+    // CART ELEMENTS
     const cartCount = document.getElementById("cart-count");
     const cartTotal = document.getElementById("cart-total");
-
-    // CREATE CART ITEMS CONTAINER
-    let cartItemsContainer = document.getElementById("cart-items");
-
-    // IF NOT FOUND, CREATE IT
-    if (!cartItemsContainer) {
-
-        cartItemsContainer = document.createElement("div");
-
-        cartItemsContainer.id = "cart-items";
-
-        document.querySelector(".cart-box")
-            .appendChild(cartItemsContainer);
-    }
+    const cartItems = document.getElementById("cart-items");
 
     // =========================
     // ADD TO CART BUTTONS
@@ -35,24 +22,21 @@ document.addEventListener("DOMContentLoaded", () => {
             // GET CARD
             const card = button.parentElement;
 
-            // GET ITEM NAME
+            // GET NAME
             const itemName =
                 card.querySelector("h3").textContent;
 
-            // GET ITEM PRICE
+            // GET PRICE
             const itemPrice =
                 Number(button.dataset.price);
 
-            // CREATE ITEM OBJECT
-            const item = {
+            // ADD ITEM TO CART
+            cart.push({
                 name: itemName,
                 price: itemPrice
-            };
+            });
 
-            // ADD ITEM TO CART ARRAY
-            cart.push(item);
-
-            // UPDATE DISPLAY
+            // UPDATE CART
             updateCart();
 
             // BUTTON FEEDBACK
@@ -81,21 +65,22 @@ document.addEventListener("DOMContentLoaded", () => {
             total += item.price;
         });
 
-        // UPDATE TOTAL DISPLAY
+        // DISPLAY TOTAL
         cartTotal.textContent = total;
 
         // CLEAR OLD ITEMS
-        cartItemsContainer.innerHTML = "";
+        cartItems.innerHTML = "";
 
         // DISPLAY ITEMS
         cart.forEach((item, index) => {
 
             // CREATE ITEM DIV
-            const itemDiv = document.createElement("div");
+            const itemDiv =
+                document.createElement("div");
 
             itemDiv.classList.add("cart-item");
 
-            // ITEM CONTENT
+            // ADD CONTENT
             itemDiv.innerHTML = `
                 <span>
                     ${item.name} - P${item.price}
@@ -120,84 +105,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
             });
 
-            // ADD ITEM TO CONTAINER
-            cartItemsContainer.appendChild(itemDiv);
+            // ADD TO CART DISPLAY
+            cartItems.appendChild(itemDiv);
 
         });
 
     }
-
-    // =========================
-    // DARK MODE
-    // =========================
-    const darkModeBtn =
-        document.getElementById("darkModeBtn");
-
-    if (darkModeBtn) {
-
-        if (localStorage.getItem("darkMode") === "enabled") {
-
-            document.body.classList.add("dark-mode");
-
-        }
-
-        darkModeBtn.addEventListener("click", () => {
-
-            document.body.classList.toggle("dark-mode");
-
-            if (document.body.classList.contains("dark-mode")) {
-
-                localStorage.setItem("darkMode", "enabled");
-
-            } else {
-
-                localStorage.setItem("darkMode", "disabled");
-
-            }
-
-        });
-
-    }
-
-    // =========================
-    // MOBILE MENU
-    // =========================
-    const menuToggle =
-        document.getElementById("menuToggle");
-
-    const nav =
-        document.querySelector("nav");
-
-    if (menuToggle) {
-
-        menuToggle.addEventListener("click", () => {
-
-            nav.classList.toggle("show-nav");
-
-        });
-
-    }
-
-    // =========================
-    // ACTIVE NAV LINKS
-    // =========================
-    const links =
-        document.querySelectorAll("nav a");
-
-    links.forEach(link => {
-
-        link.addEventListener("click", function () {
-
-            links.forEach(navLink => {
-
-                navLink.classList.remove("active");
-
-            });
-
-            this.classList.add("active");
-
-        });
-
-    });
 
 });
