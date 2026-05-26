@@ -371,3 +371,181 @@ footer{
 .remove-btn:hover{
     background:#ff8fab;
 }
+/* =========================
+   GLOBAL RESPONSIVE FIXES
+========================= */
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    overflow-x:hidden;
+}
+
+/* =========================
+   HEADER RESPONSIVE
+========================= */
+
+header{
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+nav{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+#menuToggle{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* =========================
+   TABLET DEVICES
+========================= */
+
+@media(max-width:992px){
+
+    .hero-text h1{
+        font-size:45px;
+    }
+
+    .hero-text p{
+        font-size:18px;
+    }
+
+    .featured-grid,
+    .category-grid{
+        grid-template-columns:
+        repeat(auto-fit,minmax(220px,1fr));
+    }
+
+}
+
+/* =========================
+   MOBILE DEVICES
+========================= */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        text-align:center;
+        padding:15px 5%;
+    }
+
+    .logo{
+        flex-direction:column;
+    }
+
+    .logo img{
+        width:90px;
+        height:90px;
+    }
+
+    .logo-text{
+        font-size:28px;
+        text-align:center;
+    }
+
+    nav{
+        width:100%;
+        justify-content:center;
+        gap:10px;
+    }
+
+    nav a{
+        padding:10px 15px;
+        font-size:14px;
+    }
+
+    .hero{
+        height:auto;
+        padding:80px 20px;
+    }
+
+    .hero-text h1{
+        font-size:35px;
+    }
+
+    .hero-text p{
+        font-size:16px;
+    }
+
+    .categories,
+    .featured{
+        padding:50px 5%;
+    }
+
+    .featured-grid,
+    .category-grid{
+        grid-template-columns:1fr;
+    }
+
+    .dessert-card img,
+    .card img{
+        height:220px;
+    }
+
+    .menu-image{
+        height:300px;
+    }
+
+    .footer-content{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .socials{
+        justify-content:center;
+    }
+
+    .cart-box{
+        width:100%;
+    }
+
+    .cart-item{
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
+    }
+
+}
+
+/* =========================
+   SMALL PHONES
+========================= */
+
+@media(max-width:480px){
+
+    .hero-text h1{
+        font-size:28px;
+    }
+
+    .hero-text p{
+        font-size:14px;
+    }
+
+    .btn,
+    .add-cart,
+    .remove-btn{
+        width:100%;
+    }
+
+    nav a{
+        width:100%;
+    }
+
+}
